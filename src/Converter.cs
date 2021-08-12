@@ -10,9 +10,13 @@ public static class Converter
         {
             return "II";
         }
-        else
+        else if (n == 3)
         {
             return "III";
+        }
+        else
+        {
+            return "IV";
         }
     }
 }
