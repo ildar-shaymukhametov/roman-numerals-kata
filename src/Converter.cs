@@ -10,43 +10,11 @@ public static class Converter
         {
             return HandleTwoDigits(n);
         }
+        if (n >= 100 && n <= 999)
+        {
+            return HandleThreeDigits(n);
+        }
 
-        else if (n == 100)
-        {
-            return "C";
-        }
-        else if (n == 200)
-        {
-            return "CC";
-        }
-        else if (n == 300)
-        {
-            return "CCC";
-        }
-        else if (n == 400)
-        {
-            return "CD";
-        }
-        else if (n == 500)
-        {
-            return "D";
-        }
-        else if (n == 600)
-        {
-            return "DC";
-        }
-        else if (n == 700)
-        {
-            return "DCC";
-        }
-        else if (n == 800)
-        {
-            return "DCCC";
-        }
-        else if (n == 900)
-        {
-            return "CM";
-        }
         else if (n == 1000)
         {
             return "M";
@@ -86,6 +54,22 @@ public static class Converter
             70 => "LXX",
             80 => "LXXX",
             _ => "XC"
+        };
+    }
+
+    private static string HandleThreeDigits(int n)
+    {
+        return n switch
+        {
+            100 => "C",
+            200 => "CC",
+            300 => "CCC",
+            400 => "CD",
+            500 => "D",
+            600 => "DC",
+            700 => "DCC",
+            800 => "DCCC",
+            _ => "CM"
         };
     }
 }
