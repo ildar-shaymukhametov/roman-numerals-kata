@@ -185,4 +185,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(800);
         Assert.Equal("DCCC", actual);
     }
+
+    [Fact]
+    public void Converts_900_to_roman_CM()
+    {
+        var actual = Converter.ToRoman(900);
+        Assert.Equal("CM", actual);
+    }
 }
