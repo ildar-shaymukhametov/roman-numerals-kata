@@ -26,9 +26,13 @@ public static class Converter
         {
             return "VI";
         }
-        else
+        else if (n == 7)
         {
             return "VII";
+        }
+        else
+        {
+            return "VIII";
         }
     }
 }
