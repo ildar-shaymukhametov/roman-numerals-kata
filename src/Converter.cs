@@ -30,9 +30,13 @@ public static class Converter
         {
             return "VII";
         }
-        else
+        else if (n == 8)
         {
             return "VIII";
+        }
+        else
+        {
+            return "IX";
         }
     }
 }
