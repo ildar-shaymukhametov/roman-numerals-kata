@@ -70,9 +70,13 @@ public static class Converter
         {
             return "LXXX";
         }
-        else
+        else if (n == 90)
         {
             return "XC";
+        }
+        else
+        {
+            return "C";
         }
     }
 }
