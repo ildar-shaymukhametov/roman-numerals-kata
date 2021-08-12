@@ -2,41 +2,9 @@ public static class Converter
 {
     public static string ToRoman(int n)
     {
-        if (n == 1) 
+        if (n >= 1 && n <= 9)
         {
-            return "I";
-        }
-        else if (n == 2)
-        {
-            return "II";
-        }
-        else if (n == 3)
-        {
-            return "III";
-        }
-        else if (n == 4)
-        {
-            return "IV";
-        }
-        else if (n == 5)
-        {
-            return "V";
-        }
-        else if (n == 6)
-        {
-            return "VI";
-        }
-        else if (n == 7)
-        {
-            return "VII";
-        }
-        else if (n == 8)
-        {
-            return "VIII";
-        }
-        else if (n == 9)
-        {
-            return "IX";
+            return HandleOneDigit(n);
         }
         else if (n == 10)
         {
@@ -118,5 +86,21 @@ public static class Converter
         {
             return "MCMIII";
         }
+    }
+
+    private static string HandleOneDigit(int n)
+    {
+        return n switch
+        {
+            1 => "I",
+            2 => "II",
+            3 => "III",
+            4 => "IV",
+            5 => "V",
+            6 => "VI",
+            7 => "VII",
+            8 => "VIII",
+            _ => "IX"
+        };
     }
 }
