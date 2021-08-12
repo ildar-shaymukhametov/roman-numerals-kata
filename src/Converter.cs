@@ -2,22 +2,39 @@ public static class Converter
 {
     public static string ToRoman(int n)
     {
-        if (n >= 1 && n <= 9)
+        var left = n;
+        var incr = 10;
+        var result = "";
+        while (left > 0)
         {
-            return HandleOneDigit(n);
+            var number = left % incr;
+            if (number == 0)
+            {
+                incr *= 10;
+                continue;
+            }
+
+            switch (incr)
+            {
+                case 10:
+                    result = result.Insert(0, HandleOneDigit(number));
+                    break;
+                case 100:
+                    result = result.Insert(0, HandleTwoDigits(number));
+                    break;
+                case 1000:
+                    result = result.Insert(0, HandleThreeDigits(number));
+                    break;
+                default:
+                    result = result.Insert(0, HandleFourDigits(number));
+                    break;
+            }
+
+            left -= number;
+            incr *= 10;
         }
-        else if (n >= 10 && n <= 99)
-        {
-            return HandleTwoDigits(n);
-        }
-        else if (n >= 100 && n <= 999)
-        {
-            return HandleThreeDigits(n);
-        }
-        else
-        {
-            return HandleFourDigits(n);
-        }
+
+        return result;
     }
 
     private static string HandleOneDigit(int n)
@@ -74,8 +91,7 @@ public static class Converter
         {
             1000 => "M",
             2000 => "MM",
-            3000 => "MMM",
-            _ => "MCMIII",
+            _ => "MMM",
         };
     }
 }

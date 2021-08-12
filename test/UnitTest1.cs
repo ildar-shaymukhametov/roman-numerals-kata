@@ -206,4 +206,16 @@ public class UnitTest1
         var actual = Converter.ToRoman(1903);
         Assert.Equal("MCMIII", actual);
     }
+
+    [Theory]
+    [InlineData(2981, "MMCMLXXXI")]
+    [InlineData(531, "DXXXI")]
+    [InlineData(187, "CLXXXVII")]
+    [InlineData(1296, "MCCXCVI")]
+    [InlineData(87, "LXXXVII")]
+    public void Converts_any_number_to_roman(int n, string expected)
+    {
+        var actual = Converter.ToRoman(n);
+        Assert.Equal(expected, actual);
+    }
 }
