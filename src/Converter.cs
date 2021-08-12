@@ -2,12 +2,11 @@ public static class Converter
 {
     public static string ToRoman(int n)
     {
-        var left = n;
         var numberOfDigits = 1;
         var result = "";
-        while (left > 0)
+        while (n > 0)
         {
-            var number = left % (int)Math.Pow(10, numberOfDigits);
+            var number = n % (int)Math.Pow(10, numberOfDigits);
             if (number != 0)
             {
                 switch (numberOfDigits)
@@ -26,7 +25,7 @@ public static class Converter
                         break;
                 }
 
-                left -= number;
+                n -= number;
             }
 
             numberOfDigits++;
