@@ -98,9 +98,13 @@ public static class Converter
         {
             return "DC";
         }
-        else
+        else if (n == 700)
         {
             return "DCC";
+        }
+        else
+        {
+            return "DCCC";
         }
     }
 }
