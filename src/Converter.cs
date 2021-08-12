@@ -8,29 +8,27 @@ public static class Converter
         while (left > 0)
         {
             var number = left % incr;
-            if (number == 0)
+            if (number != 0)
             {
-                incr *= 10;
-                continue;
+                switch (incr)
+                {
+                    case 10:
+                        result = result.Insert(0, HandleOneDigit(number));
+                        break;
+                    case 100:
+                        result = result.Insert(0, HandleTwoDigits(number));
+                        break;
+                    case 1000:
+                        result = result.Insert(0, HandleThreeDigits(number));
+                        break;
+                    default:
+                        result = result.Insert(0, HandleFourDigits(number));
+                        break;
+                }
+
+                left -= number;
             }
 
-            switch (incr)
-            {
-                case 10:
-                    result = result.Insert(0, HandleOneDigit(number));
-                    break;
-                case 100:
-                    result = result.Insert(0, HandleTwoDigits(number));
-                    break;
-                case 1000:
-                    result = result.Insert(0, HandleThreeDigits(number));
-                    break;
-                default:
-                    result = result.Insert(0, HandleFourDigits(number));
-                    break;
-            }
-
-            left -= number;
             incr *= 10;
         }
 
