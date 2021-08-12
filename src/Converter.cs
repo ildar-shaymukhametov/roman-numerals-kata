@@ -6,42 +6,11 @@ public static class Converter
         {
             return HandleOneDigit(n);
         }
-        else if (n == 10)
+        if (n >= 10 && n <= 99)
         {
-            return "X";
+            return HandleTwoDigits(n);
         }
-        else if (n == 20)
-        {
-            return "XX";
-        }
-        else if (n == 30)
-        {
-            return "XXX";
-        }
-        else if (n == 40)
-        {
-            return "XL";
-        }
-        else if (n == 50)
-        {
-            return "L";
-        }
-        else if (n == 60)
-        {
-            return "LX";
-        }
-        else if (n == 70)
-        {
-            return "LXX";
-        }
-        else if (n == 80)
-        {
-            return "LXXX";
-        }
-        else if (n == 90)
-        {
-            return "XC";
-        }
+
         else if (n == 100)
         {
             return "C";
@@ -101,6 +70,22 @@ public static class Converter
             7 => "VII",
             8 => "VIII",
             _ => "IX"
+        };
+    }
+
+    private static string HandleTwoDigits(int n)
+    {
+        return n switch
+        {
+            10 => "X",
+            20 => "XX",
+            30 => "XXX",
+            40 => "XL",
+            50 => "L",
+            60 => "LX",
+            70 => "LXX",
+            80 => "LXXX",
+            _ => "XC"
         };
     }
 }
