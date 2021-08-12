@@ -86,9 +86,13 @@ public static class Converter
         {
             return "CCC";
         }
-        else
+        else if (n == 400)
         {
             return "CD";
+        }
+        else
+        {
+            return "D";
         }
     }
 }
