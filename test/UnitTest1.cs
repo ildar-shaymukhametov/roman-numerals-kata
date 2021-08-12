@@ -143,4 +143,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(200);
         Assert.Equal("CC", actual);
     }
+
+    [Fact]
+    public void Converts_300_to_roman_CCC()
+    {
+        var actual = Converter.ToRoman(300);
+        Assert.Equal("CCC", actual);
+    }
 }

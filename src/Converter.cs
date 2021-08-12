@@ -78,9 +78,13 @@ public static class Converter
         {
             return "C";
         }
-        else
+        else if (n == 200)
         {
             return "CC";
+        }
+        else
+        {
+            return "CCC";
         }
     }
 }
