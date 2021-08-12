@@ -62,9 +62,13 @@ public static class Converter
         {
             return "LX";
         }
-        else
+        else if (n == 70)
         {
             return "LXX";
+        }
+        else
+        {
+            return "LXXX";
         }
     }
 }
