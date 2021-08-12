@@ -90,9 +90,13 @@ public static class Converter
         {
             return "CD";
         }
-        else
+        else if (n == 500)
         {
             return "D";
+        }
+        else
+        {
+            return "DC";
         }
     }
 }

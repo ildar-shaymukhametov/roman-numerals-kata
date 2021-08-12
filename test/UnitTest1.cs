@@ -164,4 +164,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(500);
         Assert.Equal("D", actual);
     }
+
+    [Fact]
+    public void Converts_600_to_roman_DC()
+    {
+        var actual = Converter.ToRoman(600);
+        Assert.Equal("DC", actual);
+    }
 }
