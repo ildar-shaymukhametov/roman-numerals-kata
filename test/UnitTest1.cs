@@ -38,4 +38,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(5);
         Assert.Equal("V", actual);
     }
+
+    [Fact]
+    public void Converts_6_to_roman_VI()
+    {
+        var actual = Converter.ToRoman(6);
+        Assert.Equal("VI", actual);
+    }
 }

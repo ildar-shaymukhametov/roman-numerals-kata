@@ -18,9 +18,13 @@ public static class Converter
         {
             return "IV";
         }
-        else
+        else if (n == 5)
         {
             return "V";
+        }
+        else
+        {
+            return "VI";
         }
     }
 }
