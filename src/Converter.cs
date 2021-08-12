@@ -74,9 +74,13 @@ public static class Converter
         {
             return "XC";
         }
-        else
+        else if (n == 100)
         {
             return "C";
+        }
+        else
+        {
+            return "CC";
         }
     }
 }
