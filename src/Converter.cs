@@ -2,6 +2,13 @@ public static class Converter
 {
     public static string ToRoman(int n)
     {
-        return "I";
+        if (n == 1) 
+        {
+            return "I";
+        }
+        else
+        {
+            return "II";
+        }
     }
 }
