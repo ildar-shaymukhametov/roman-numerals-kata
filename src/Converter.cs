@@ -6,22 +6,17 @@ public static class Converter
         {
             return HandleOneDigit(n);
         }
-        if (n >= 10 && n <= 99)
+        else if (n >= 10 && n <= 99)
         {
             return HandleTwoDigits(n);
         }
-        if (n >= 100 && n <= 999)
+        else if (n >= 100 && n <= 999)
         {
             return HandleThreeDigits(n);
         }
-
-        else if (n == 1000)
-        {
-            return "M";
-        }
         else
         {
-            return "MCMIII";
+            return HandleFourDigits(n);
         }
     }
 
@@ -70,6 +65,17 @@ public static class Converter
             700 => "DCC",
             800 => "DCCC",
             _ => "CM"
+        };
+    }
+
+    private static string HandleFourDigits(int n)
+    {
+        return n switch
+        {
+            1000 => "M",
+            2000 => "MM",
+            3000 => "MMM",
+            _ => "MCMIII",
         };
     }
 }
