@@ -2,33 +2,33 @@ public static class Converter
 {
     public static string ToRoman(int n)
     {
-        var numberOfDigits = 1;
+        var numberOfDigits = 0;
         var result = "";
         while (n > 0)
         {
-            var number = n % (int)Math.Pow(10, numberOfDigits);
-            if (number != 0)
+            var number = n % (int)Math.Pow(10, ++numberOfDigits);
+            if (number == 0)
             {
-                switch (numberOfDigits)
-                {
-                    case 1:
-                        result = result.Insert(0, HandleOneDigit(number));
-                        break;
-                    case 2:
-                        result = result.Insert(0, HandleTwoDigits(number));
-                        break;
-                    case 3:
-                        result = result.Insert(0, HandleThreeDigits(number));
-                        break;
-                    default:
-                        result = result.Insert(0, HandleFourDigits(number));
-                        break;
-                }
-
-                n -= number;
+                continue;
             }
 
-            numberOfDigits++;
+            switch (numberOfDigits)
+            {
+                case 1:
+                    result = result.Insert(0, HandleOneDigit(number));
+                    break;
+                case 2:
+                    result = result.Insert(0, HandleTwoDigits(number));
+                    break;
+                case 3:
+                    result = result.Insert(0, HandleThreeDigits(number));
+                    break;
+                default:
+                    result = result.Insert(0, HandleFourDigits(number));
+                    break;
+            }
+
+            n -= number;
         }
 
         return result;
