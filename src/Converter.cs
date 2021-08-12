@@ -58,9 +58,13 @@ public static class Converter
         {
             return "L";
         }
-        else
+        else if (n == 60)
         {
             return "LX";
+        }
+        else
+        {
+            return "LXX";
         }
     }
 }
