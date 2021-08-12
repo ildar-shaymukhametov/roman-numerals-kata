@@ -3,22 +3,22 @@ public static class Converter
     public static string ToRoman(int n)
     {
         var left = n;
-        var incr = 10;
+        var numberOfDigits = 1;
         var result = "";
         while (left > 0)
         {
-            var number = left % incr;
+            var number = left % (int)Math.Pow(10, numberOfDigits);
             if (number != 0)
             {
-                switch (incr)
+                switch (numberOfDigits)
                 {
-                    case 10:
+                    case 1:
                         result = result.Insert(0, HandleOneDigit(number));
                         break;
-                    case 100:
+                    case 2:
                         result = result.Insert(0, HandleTwoDigits(number));
                         break;
-                    case 1000:
+                    case 3:
                         result = result.Insert(0, HandleThreeDigits(number));
                         break;
                     default:
@@ -29,7 +29,7 @@ public static class Converter
                 left -= number;
             }
 
-            incr *= 10;
+            numberOfDigits++;
         }
 
         return result;
