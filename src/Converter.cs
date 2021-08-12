@@ -42,9 +42,17 @@ public static class Converter
         {
             return "X";
         }
-        else
+        else if (n == 20)
         {
             return "XX";
+        }
+        else if (n == 30)
+        {
+            return "XXX";
+        }
+        else
+        {
+            return "XL";
         }
     }
 }

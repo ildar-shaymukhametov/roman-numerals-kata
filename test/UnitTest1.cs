@@ -80,4 +80,18 @@ public class UnitTest1
         var actual = Converter.ToRoman(20);
         Assert.Equal("XX", actual);
     }
+
+    [Fact]
+    public void Converts_30_to_roman_XXX()
+    {
+        var actual = Converter.ToRoman(30);
+        Assert.Equal("XXX", actual);
+    }
+
+    [Fact]
+    public void Converts_40_to_roman_XL()
+    {
+        var actual = Converter.ToRoman(40);
+        Assert.Equal("XL", actual);
+    }
 }
