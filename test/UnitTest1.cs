@@ -122,4 +122,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(80);
         Assert.Equal("LXXX", actual);
     }
+
+    [Fact]
+    public void Converts_90_to_roman_XC()
+    {
+        var actual = Converter.ToRoman(90);
+        Assert.Equal("XC", actual);
+    }
 }
