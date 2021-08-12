@@ -199,4 +199,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(1000);
         Assert.Equal("M", actual);
     }
+
+    [Fact]
+    public void Converts_1903_to_roman_MCMIII()
+    {
+        var actual = Converter.ToRoman(1903);
+        Assert.Equal("MCMIII", actual);
+    }
 }

@@ -110,9 +110,13 @@ public static class Converter
         {
             return "CM";
         }
-        else
+        else if (n == 1000)
         {
             return "M";
+        }
+        else
+        {
+            return "MCMIII";
         }
     }
 }
