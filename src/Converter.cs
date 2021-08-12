@@ -50,9 +50,13 @@ public static class Converter
         {
             return "XXX";
         }
-        else
+        else if (n == 40)
         {
             return "XL";
+        }
+        else
+        {
+            return "L";
         }
     }
 }

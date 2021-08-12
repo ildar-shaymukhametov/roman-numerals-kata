@@ -94,4 +94,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(40);
         Assert.Equal("XL", actual);
     }
+
+    [Fact]
+    public void Converts_50_to_roman_L()
+    {
+        var actual = Converter.ToRoman(50);
+        Assert.Equal("L", actual);
+    }
 }
