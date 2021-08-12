@@ -82,9 +82,13 @@ public static class Converter
         {
             return "CC";
         }
-        else
+        else if (n == 300)
         {
             return "CCC";
+        }
+        else
+        {
+            return "CD";
         }
     }
 }
