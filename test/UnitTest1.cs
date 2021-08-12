@@ -192,4 +192,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(900);
         Assert.Equal("CM", actual);
     }
+
+    [Fact]
+    public void Converts_1000_to_roman_M()
+    {
+        var actual = Converter.ToRoman(1000);
+        Assert.Equal("M", actual);
+    }
 }

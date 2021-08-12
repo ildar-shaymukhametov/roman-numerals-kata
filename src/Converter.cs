@@ -106,9 +106,13 @@ public static class Converter
         {
             return "DCCC";
         }
-        else
+        else if (n == 900)
         {
             return "CM";
+        }
+        else
+        {
+            return "M";
         }
     }
 }
