@@ -38,9 +38,13 @@ public static class Converter
         {
             return "IX";
         }
-        else
+        else if (n == 10)
         {
             return "X";
+        }
+        else
+        {
+            return "XX";
         }
     }
 }

@@ -73,4 +73,11 @@ public class UnitTest1
         var actual = Converter.ToRoman(10);
         Assert.Equal("X", actual);
     }
+
+    [Fact]
+    public void Converts_20_to_roman_XX()
+    {
+        var actual = Converter.ToRoman(20);
+        Assert.Equal("XX", actual);
+    }
 }
