@@ -22,9 +22,13 @@ public static class Converter
         {
             return "V";
         }
-        else
+        else if (n == 6)
         {
             return "VI";
+        }
+        else
+        {
+            return "VII";
         }
     }
 }
