@@ -9,23 +9,20 @@ public static class Converter
             .ForEach(numOfDigits =>
             {
                 var number = n % (int)Math.Pow(10, numOfDigits);
-                if (number != 0)
+                switch (numOfDigits)
                 {
-                    switch (numOfDigits)
-                    {
-                        case 1:
-                            result = result.Insert(0, HandleOneDigit(number));
-                            break;
-                        case 2:
-                            result = result.Insert(0, HandleTwoDigits(number));
-                            break;
-                        case 3:
-                            result = result.Insert(0, HandleThreeDigits(number));
-                            break;
-                        default:
-                            result = result.Insert(0, HandleFourDigits(number));
-                            break;
-                    }
+                    case 1:
+                        result = result.Insert(0, HandleOneDigit(number));
+                        break;
+                    case 2:
+                        result = result.Insert(0, HandleTwoDigits(number));
+                        break;
+                    case 3:
+                        result = result.Insert(0, HandleThreeDigits(number));
+                        break;
+                    default:
+                        result = result.Insert(0, HandleFourDigits(number));
+                        break;
                 }
 
                 n -= number;
@@ -46,7 +43,8 @@ public static class Converter
             6 => "VI",
             7 => "VII",
             8 => "VIII",
-            _ => "IX"
+            9 => "IX",
+            _ => ""
         };
     }
 
@@ -62,7 +60,8 @@ public static class Converter
             60 => "LX",
             70 => "LXX",
             80 => "LXXX",
-            _ => "XC"
+            90 => "XC",
+            _ => ""
         };
     }
 
@@ -78,7 +77,8 @@ public static class Converter
             600 => "DC",
             700 => "DCC",
             800 => "DCCC",
-            _ => "CM"
+            900 => "CM",
+            _ => ""
         };
     }
 
@@ -88,7 +88,8 @@ public static class Converter
         {
             1000 => "M",
             2000 => "MM",
-            _ => "MMM",
+            3000 => "MMM",
+            _ => ""
         };
     }
 }
