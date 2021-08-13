@@ -3,12 +3,13 @@ public static class Converter
     public static string ToRoman(int n)
     {
         var result = "";
+        var remainder = n;
         Enumerable
             .Range(1, n.ToString().Length)
             .ToList()
             .ForEach(numOfDigits =>
             {
-                var number = n % (int)Math.Pow(10, numOfDigits);
+                var number = remainder % (int)Math.Pow(10, numOfDigits);
                 switch (numOfDigits)
                 {
                     case 1:
@@ -25,7 +26,7 @@ public static class Converter
                         break;
                 }
 
-                n -= number;
+                remainder -= number;
             });
 
         return result;
