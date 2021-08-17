@@ -10,29 +10,14 @@ public static class Converter
             .ForEach(numOfDigits =>
             {
                 var number = remainder % (int)Math.Pow(10, numOfDigits);
-                switch (numOfDigits)
-                {
-                    case 1:
-                        result = result.Insert(0, HandleOneDigit(number));
-                        break;
-                    case 2:
-                        result = result.Insert(0, HandleTwoDigits(number));
-                        break;
-                    case 3:
-                        result = result.Insert(0, HandleThreeDigits(number));
-                        break;
-                    default:
-                        result = result.Insert(0, HandleFourDigits(number));
-                        break;
-                }
-
+                result = result.Insert(0, ToRomanNumeral(number));
                 remainder -= number;
             });
 
         return result;
     }
 
-    private static string HandleOneDigit(int n)
+    private static string ToRomanNumeral(int n)
     {
         return n switch
         {
@@ -45,14 +30,6 @@ public static class Converter
             7 => "VII",
             8 => "VIII",
             9 => "IX",
-            _ => ""
-        };
-    }
-
-    private static string HandleTwoDigits(int n)
-    {
-        return n switch
-        {
             10 => "X",
             20 => "XX",
             30 => "XXX",
@@ -62,14 +39,6 @@ public static class Converter
             70 => "LXX",
             80 => "LXXX",
             90 => "XC",
-            _ => ""
-        };
-    }
-
-    private static string HandleThreeDigits(int n)
-    {
-        return n switch
-        {
             100 => "C",
             200 => "CC",
             300 => "CCC",
@@ -79,14 +48,6 @@ public static class Converter
             700 => "DCC",
             800 => "DCCC",
             900 => "CM",
-            _ => ""
-        };
-    }
-
-    private static string HandleFourDigits(int n)
-    {
-        return n switch
-        {
             1000 => "M",
             2000 => "MM",
             3000 => "MMM",
